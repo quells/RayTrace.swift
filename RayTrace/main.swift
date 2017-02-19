@@ -28,6 +28,11 @@ func TestSky(width: Int, height: Int) {
     var data = [float3](repeating: float3(), count: width*height)
     
     func color(_ r: Ray) -> float3 {
+        let s = Sphere(center: float3(0, 0, -1), radius: 0.5)
+        let (didHit, _) = s.hit(r: r, near: 0.001, far: 1000)
+        if didHit {
+            return float3(1, 0, 0)
+        }
         let unit_dir = normalize(r.direction)
         let t = 0.5 * (unit_dir.y + 1.0)
         let blue = float3(0.5, 0.7, 1.0)
