@@ -5,13 +5,16 @@ public struct HitRecord {
     var T, near, far: Float
     var u, v: Float
     var P, Normal: float3
+    var Material: MaterialShader
     
     public init(
         T: Float = 0, near: Float = 0, far: Float = 0, u: Float = 0, v: Float = 0,
-        P: float3 = float3(), Normal: float3 = float3()
+        P: float3 = float3(), Normal: float3 = float3(),
+        Material: MaterialShader = MaterialShader()
         ) {
         (self.T, self.near, self.far, self.u, self.v) = (T, near, far, u, v)
         (self.P, self.Normal) = (P, Normal)
+        self.Material = Material
     }
 }
 

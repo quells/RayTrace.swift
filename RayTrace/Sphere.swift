@@ -4,15 +4,18 @@ import simd
 public class Sphere: Object {
     let center: float3
     let radius: Float
+    let shader: MaterialShader
     
-    init(center: float3, radius: Float) {
+    init(center: float3, radius: Float, shader: MaterialShader) {
         self.center = center
         self.radius = radius
+        self.shader = shader
     }
     
-    init(x: Float, y: Float, z: Float, r: Float) {
+    init(x: Float, y: Float, z: Float, r: Float, shader: MaterialShader) {
         self.center = float3(x, y, z)
         self.radius = r
+        self.shader = shader
     }
     
     private func uvFor(_ p: float3) -> (u: Float, v: Float) {
@@ -41,7 +44,7 @@ public class Sphere: Object {
             let p = r.walk(x)
             let normal = (p - center) * (1.0/radius)
             let (u, v) = uvFor(p)
-            return (true, HitRecord(T: x, near: near, far: far, u: u, v: v, P: p, Normal: normal))
+            return (true, HitRecord(T: x, near: near, far: far, u: u, v: v, P: p, Normal: normal, Material: shader))
         }
         return (false, HitRecord())
     }
