@@ -38,13 +38,13 @@ func TestSky(width: Int, height: Int) {
         let t = 0.5 * (unit_dir.y + 1.0)
         let blue = float3(0.5, 0.7, 1.0)
         let white = float3(1, 1, 1)
-        return Lerp(from: blue, to: white, by: t)
+        return Lerp(from: white, to: blue, by: t)
     }
     
     for j in 0 ..< height {
         for i in 0 ..< width {
             let u = Float(i) * iw
-            let v = Float(j) * ih
+            let v = Float(height - j) * ih
             let dir = lowerLeftCorner + u*horizontal + v*vertical
             let r = Ray(origin: origin, direction: dir)
             let idx = i + width*j
