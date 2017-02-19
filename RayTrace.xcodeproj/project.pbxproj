@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C95650CA1E591DCF00A62793 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95650C91E591DCF00A62793 /* Image.swift */; };
+		C97227D71E592A90006FA164 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97227D61E592A90006FA164 /* Ray.swift */; };
+		C97227DB1E592D7A006FA164 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97227DA1E592D7A006FA164 /* Utilities.swift */; };
 		C9C066131E57B7DC00CA2106 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C066121E57B7DC00CA2106 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		C95650C91E591DCF00A62793 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		C97227D61E592A90006FA164 /* Ray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
+		C97227DA1E592D7A006FA164 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		C9C0660F1E57B7DC00CA2106 /* RayTrace */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RayTrace; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C066121E57B7DC00CA2106 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +65,8 @@
 			children = (
 				C9C066121E57B7DC00CA2106 /* main.swift */,
 				C95650C91E591DCF00A62793 /* Image.swift */,
+				C97227D61E592A90006FA164 /* Ray.swift */,
+				C97227DA1E592D7A006FA164 /* Utilities.swift */,
 			);
 			path = RayTrace;
 			sourceTree = "<group>";
@@ -126,6 +132,8 @@
 			files = (
 				C9C066131E57B7DC00CA2106 /* main.swift in Sources */,
 				C95650CA1E591DCF00A62793 /* Image.swift in Sources */,
+				C97227DB1E592D7A006FA164 /* Utilities.swift in Sources */,
+				C97227D71E592A90006FA164 /* Ray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
