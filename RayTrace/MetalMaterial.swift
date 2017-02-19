@@ -1,9 +1,5 @@
 import simd
 
-func reflect(v: float3, n: float3) -> float3 {
-    return v - 2*dot(v, n)*n
-}
-
 public class MetalMaterial: MaterialShader {
     var albedo: Texture
     var roughness: Float
