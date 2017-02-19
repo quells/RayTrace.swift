@@ -1,0 +1,3 @@
+[submodule "Squall"]
+	path = Squall
+	url = https://quells@github.com/quells/Squall.git

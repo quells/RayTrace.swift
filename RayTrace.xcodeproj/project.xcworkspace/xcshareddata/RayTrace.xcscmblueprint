@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "192F267E3F937CEAC7614E5A05FB4EA94F43731F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "192F267E3F937CEAC7614E5A05FB4EA94F43731F" : 9223372036854775807,
+    "C66B3EC833F5EF68136445DE3DBCA39B1B2780C4" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E7C3266D-C32B-4148-BE5F-BAF27EA39154",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "192F267E3F937CEAC7614E5A05FB4EA94F43731F" : "RayTrace.swift\/",
+    "C66B3EC833F5EF68136445DE3DBCA39B1B2780C4" : "RayTrace.swift\/Squall\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RayTrace",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RayTrace.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/quells\/RayTrace.swift",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "192F267E3F937CEAC7614E5A05FB4EA94F43731F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/quells\/Squall.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C66B3EC833F5EF68136445DE3DBCA39B1B2780C4"
+    }
+  ]
+}

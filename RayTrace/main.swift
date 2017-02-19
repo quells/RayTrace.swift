@@ -54,5 +54,7 @@ func TestSky(width: Int, height: Int) {
     image.exportToDesktop()
 }
 
+Squall.seed()
+
 //TestGradient(width: 200, height: 100)
 TestSky(width: 400, height: 200)
