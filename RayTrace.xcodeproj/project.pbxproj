@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C909C1031E5A3FB000ADB3E0 /* LambertMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C1021E5A3FB000ADB3E0 /* LambertMaterial.swift */; };
+		C909C1051E5A3FF400ADB3E0 /* MetalMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C1041E5A3FF400ADB3E0 /* MetalMaterial.swift */; };
 		C95650CA1E591DCF00A62793 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95650C91E591DCF00A62793 /* Image.swift */; };
 		C97202BE1E5A24E30036A5C0 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97202BD1E5A24E30036A5C0 /* Texture.swift */; };
 		C97227D71E592A90006FA164 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97227D61E592A90006FA164 /* Ray.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C909C1021E5A3FB000ADB3E0 /* LambertMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LambertMaterial.swift; sourceTree = "<group>"; };
+		C909C1041E5A3FF400ADB3E0 /* MetalMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalMaterial.swift; sourceTree = "<group>"; };
 		C95650C91E591DCF00A62793 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		C97202BD1E5A24E30036A5C0 /* Texture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
 		C97227D61E592A90006FA164 /* Ray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				C9C066121E57B7DC00CA2106 /* main.swift */,
+				C909C1021E5A3FB000ADB3E0 /* LambertMaterial.swift */,
+				C909C1041E5A3FF400ADB3E0 /* MetalMaterial.swift */,
 				C97228171E598020006FA164 /* Objects */,
 				C97227E01E59787C006FA164 /* Material.swift */,
 				C97202BD1E5A24E30036A5C0 /* Texture.swift */,
@@ -170,7 +176,9 @@
 				C9C066131E57B7DC00CA2106 /* main.swift in Sources */,
 				C95650CA1E591DCF00A62793 /* Image.swift in Sources */,
 				C97228151E597EB9006FA164 /* Squall.swift in Sources */,
+				C909C1031E5A3FB000ADB3E0 /* LambertMaterial.swift in Sources */,
 				C97227DB1E592D7A006FA164 /* Utilities.swift in Sources */,
+				C909C1051E5A3FF400ADB3E0 /* MetalMaterial.swift in Sources */,
 				C97227DF1E597097006FA164 /* Object.swift in Sources */,
 				C97228141E597EB9006FA164 /* Mersenne.swift in Sources */,
 				C97227D71E592A90006FA164 /* Ray.swift in Sources */,
