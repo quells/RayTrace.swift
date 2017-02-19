@@ -19,7 +19,7 @@ public struct Ray {
         return origin + t*direction
     }
     
-    public static func RandomSphere(around p: float3) -> Ray {
+    public static func RandomSphere(around p: float3 = float3()) -> Ray {
         var x: Float = Squall.uniform(-1, 1)
         var y: Float = Squall.uniform(-1, 1)
         var z: Float = Squall.uniform(-1, 1)
