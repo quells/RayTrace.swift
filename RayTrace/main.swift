@@ -29,7 +29,9 @@ func TestSky(width: Int, height: Int) {
     
     func color(_ r: Ray) -> float3 {
         let s = Sphere(center: float3(0, 0, -1), radius: 0.5, shader: NormLambertMaterial())
-        let (didHit, record) = s.hit(r: r, near: 0.001, far: 1000)
+        let ground = Sphere(center: float3(0, -100.5, -1), radius: 100, shader: LambertMaterial(r: 0.2, g: 0.8, b: 0.2))
+        let objs = Group(members: [s, ground])
+        let (didHit, record) = objs.hit(r: r, near: 0.001, far: 1000)
         if didHit {
             let result = record.Material.scatter(r: r, h: record)
             return result.attenuation
