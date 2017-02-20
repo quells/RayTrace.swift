@@ -27,7 +27,7 @@ public class Sphere: Object {
         return (u, v)
     }
     
-    override public func hit(r: Ray, near: Float, far: Float) -> (ditHit: Bool, record: HitRecord) {
+    override public func hit(r: Ray, near: Float, far: Float) -> HitRecord? {
         let oc = r.origin - center
         let a = length_squared(r.direction)
         let b = dot(oc, r.direction)
@@ -38,14 +38,14 @@ public class Sphere: Object {
             if x < near || x > far {
                 x = (-b + sqrt(d)) / a
                 if x < near || x > far {
-                    return (false, HitRecord())
+                    return nil
                 }
             }
             let p = r.walk(x)
             let normal = (p - center) * (1.0/radius)
             let (u, v) = uvFor(p)
-            return (true, HitRecord(T: x, near: near, far: far, u: u, v: v, P: p, Normal: normal, Material: shader))
+            return HitRecord(T: x, near: near, far: far, u: u, v: v, P: p, Normal: normal, Material: shader)
         }
-        return (false, HitRecord())
+        return nil
     }
 }

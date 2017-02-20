@@ -36,14 +36,12 @@ public class World: Scene {
     }
     
     override func getColor(r: Ray, near: Float, far: Float, bounces: Int) -> float3 {
-        let (didHit, record) = objects.hit(r: r, near: near, far: far)
-        if didHit {
+        if let record = objects.hit(r: r, near: near, far: far) {
             let result = record.scatter(r: r)
             if result.didScatter && bounces > 0 {
                 let color = getColor(r: result.scattered, near: near, far: far-record.T, bounces: bounces-1)
                 return result.attenuation * color
             }
-            
         }
         return sky.color(for: r)
     }

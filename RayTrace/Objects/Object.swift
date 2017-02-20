@@ -23,8 +23,12 @@ public struct HitRecord {
 }
 
 public class Object {
-    public func hit(r: Ray, near: Float, far: Float) -> (ditHit: Bool, record: HitRecord) {
-        return (false, HitRecord())
+    public func hit(r: Ray, near: Float, far: Float) -> HitRecord? {
+        return nil
+    }
+    
+    public func boundingBox(_ tmin: Float, _ tmax: Float) -> AABB? {
+        return nil
     }
 }
 
@@ -35,23 +39,17 @@ public class Group: Object {
         self.members = members
     }
     
-    override public func hit(r: Ray, near: Float, far: Float) -> (ditHit: Bool, record: HitRecord) {
-        var hitAnything = false
+    override public func hit(r: Ray, near: Float, far: Float) -> HitRecord? {
         var closestT = far
-        var closest = HitRecord()
+        var closest: HitRecord? = nil
         for m in members {
-            let (didHit, record) = m.hit(r: r, near: near, far: far)
-            if didHit {
-                hitAnything = true
+            if let record = m.hit(r: r, near: near, far: far) {
                 if record.T < closestT {
                     closestT = record.T
                     closest = record
                 }
             }
         }
-        if hitAnything {
-            return (true, closest)
-        }
-        return (false, closest)
+        return closest
     }
 }
