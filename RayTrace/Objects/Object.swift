@@ -16,10 +16,14 @@ public struct HitRecord {
         (self.P, self.Normal) = (P, Normal)
         self.Material = Material
     }
+    
+    public func scatter(r: Ray) -> ScatterResult {
+        return Material.scatter(r: r, h: self)
+    }
 }
 
 public class Object {
-    func hit(r: Ray, near: Float, far: Float) -> (ditHit: Bool, record: HitRecord) {
+    public func hit(r: Ray, near: Float, far: Float) -> (ditHit: Bool, record: HitRecord) {
         return (false, HitRecord())
     }
 }
@@ -31,7 +35,7 @@ public class Group: Object {
         self.members = members
     }
     
-    override func hit(r: Ray, near: Float, far: Float) -> (ditHit: Bool, record: HitRecord) {
+    override public func hit(r: Ray, near: Float, far: Float) -> (ditHit: Bool, record: HitRecord) {
         var hitAnything = false
         var closestT = far
         var closest = HitRecord()
