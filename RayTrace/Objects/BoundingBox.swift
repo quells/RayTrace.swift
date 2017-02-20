@@ -23,7 +23,7 @@ public struct AABB {
                 return (false, tmin, tmax)
             }
         }
-        return (false, tmin, tmax)
+        return (true, tmin, tmax)
     }
 }
 
