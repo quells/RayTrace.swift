@@ -16,7 +16,7 @@ public class MetalMaterial: MaterialShader {
     override func scatter(r: Ray, h: HitRecord) -> ScatterResult {
         var reflection = reflect(v: normalize(r.direction), n: h.Normal)
         if roughness > 0 {
-            reflection += Ray.RandomSphere().direction
+            reflection += roughness*Ray.RandomSphere().direction
         }
         let reflected = Ray(origin: h.P, direction: reflection)
         let att = albedo.colorFor(u: 0, v: 0, p: h.P)
