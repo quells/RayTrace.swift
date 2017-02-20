@@ -25,6 +25,7 @@
 		C97228141E597EB9006FA164 /* Mersenne.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97228121E597EB9006FA164 /* Mersenne.swift */; };
 		C97228151E597EB9006FA164 /* Squall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97228131E597EB9006FA164 /* Squall.swift */; };
 		C9C066131E57B7DC00CA2106 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C066121E57B7DC00CA2106 /* main.swift */; };
+		C9F4A3CA1E5AAC0A00F3E835 /* GlassMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4A3C91E5AAC0A00F3E835 /* GlassMaterial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +60,7 @@
 		C97228131E597EB9006FA164 /* Squall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Squall.swift; path = Squall/Sources/Squall.swift; sourceTree = SOURCE_ROOT; };
 		C9C0660F1E57B7DC00CA2106 /* RayTrace */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RayTrace; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C066121E57B7DC00CA2106 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		C9F4A3C91E5AAC0A00F3E835 /* GlassMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlassMaterial.swift; path = Materials/GlassMaterial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				C909C1021E5A3FB000ADB3E0 /* LambertMaterial.swift */,
 				C909C1041E5A3FF400ADB3E0 /* MetalMaterial.swift */,
+				C9F4A3C91E5AAC0A00F3E835 /* GlassMaterial.swift */,
 				C97227E01E59787C006FA164 /* Material.swift */,
 				C97202BD1E5A24E30036A5C0 /* Texture.swift */,
 			);
@@ -220,6 +223,7 @@
 				C909C1081E5A459A00ADB3E0 /* Camera.swift in Sources */,
 				C94447E01E5A5DB200AFFB6A /* Routine.swift in Sources */,
 				C94447DF1E5A5DB200AFFB6A /* Queue.swift in Sources */,
+				C9F4A3CA1E5AAC0A00F3E835 /* GlassMaterial.swift in Sources */,
 				C97228141E597EB9006FA164 /* Mersenne.swift in Sources */,
 				C97227D71E592A90006FA164 /* Ray.swift in Sources */,
 			);
