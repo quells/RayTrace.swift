@@ -23,12 +23,12 @@ public class Camera {
         let u = normalize(cross(vup, w))
         let v = cross(w, u)
         
-        self.LLCorner = Origin - halfWidth*u + halfHeight*v - w
+        self.LLCorner = Origin - halfWidth*u - halfHeight*v - w
         self.Horizontal = 2*halfWidth*u
         self.Vertical = 2*halfHeight*v
     }
     
-    func GetRay(u: Float, v: Float) -> Ray {
+    func getRay(u: Float, v: Float) -> Ray {
         let a = LLCorner - Origin
         let b = u*Horizontal + v*Vertical
         let dir = a + b

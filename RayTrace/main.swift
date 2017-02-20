@@ -33,7 +33,7 @@ func TestSky(width: Int, height: Int) {
         let objs = Group(members: [s, ground])
         let (didHit, record) = objs.hit(r: r, near: 0.001, far: 1000)
         if didHit {
-            let result = record.Material.scatter(r: r, h: record)
+            let result = record.scatter(r: r)
             return result.attenuation
         }
         let unit_dir = normalize(r.direction)
@@ -57,7 +57,31 @@ func TestSky(width: Int, height: Int) {
     image.exportToDesktop()
 }
 
+func TestScene(width: Int, height: Int) {
+    let diffuseGreen = LambertMaterial(r: 0.1, g: 0.8, b: 0.2)
+    let diffuseNorm = NormLambertMaterial()
+    let metallicGold = MetalMaterial(r: 0.8, g: 0.6, b: 0.2, roughness: 0)
+    
+    let middle = Sphere(center: float3(), radius: 0.5, shader: diffuseNorm)
+    let right = Sphere(center: float3(1.02, 0, 0), radius: 0.5, shader: metallicGold)
+    let ground = Sphere(center: float3(0, -100.5, 0), radius: 100, shader: diffuseGreen)
+    let spheres = Group(members: [middle, right, ground])
+    
+    let sky = TwoColorSky(center: float3(1, 1, 1), edges: float3(0.5, 0.7, 1))
+    let world = World(objects: spheres, sky: sky)
+    
+    let camera = Camera(lookfrom: float3(0, 0, 4), lookat: middle.center, vup: float3(0, 1, 0), vfov: 20, width: width, height: height)
+    let renderer = Renderer(camera: camera)
+    
+    let image = renderer.render(scene: world, samples: 10)
+    image.exportToDesktop()
+}
+
 Squall.seed()
 
 //TestGradient(width: 200, height: 100)
-TestSky(width: 400, height: 200)
+//TestSky(width: 400, height: 200)
+let start = Date()
+TestScene(width: 200, height: 100)
+let duration = -start.timeIntervalSinceNow
+print(Squall.count, duration)

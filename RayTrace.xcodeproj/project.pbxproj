@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		C909C1031E5A3FB000ADB3E0 /* LambertMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C1021E5A3FB000ADB3E0 /* LambertMaterial.swift */; };
 		C909C1051E5A3FF400ADB3E0 /* MetalMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C1041E5A3FF400ADB3E0 /* MetalMaterial.swift */; };
+		C909C1081E5A459A00ADB3E0 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C1071E5A459A00ADB3E0 /* Camera.swift */; };
+		C909C10A1E5A48A100ADB3E0 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C1091E5A48A100ADB3E0 /* Renderer.swift */; };
+		C909C10C1E5A4A1900ADB3E0 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C10B1E5A4A1900ADB3E0 /* Scene.swift */; };
+		C94447DE1E5A5DB200AFFB6A /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94447DB1E5A5DB200AFFB6A /* Channel.swift */; };
+		C94447DF1E5A5DB200AFFB6A /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94447DC1E5A5DB200AFFB6A /* Queue.swift */; };
+		C94447E01E5A5DB200AFFB6A /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94447DD1E5A5DB200AFFB6A /* Routine.swift */; };
 		C95650CA1E591DCF00A62793 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95650C91E591DCF00A62793 /* Image.swift */; };
 		C97202BE1E5A24E30036A5C0 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97202BD1E5A24E30036A5C0 /* Texture.swift */; };
 		C97227D71E592A90006FA164 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97227D61E592A90006FA164 /* Ray.swift */; };
@@ -34,15 +40,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C909C1021E5A3FB000ADB3E0 /* LambertMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LambertMaterial.swift; sourceTree = "<group>"; };
-		C909C1041E5A3FF400ADB3E0 /* MetalMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalMaterial.swift; sourceTree = "<group>"; };
+		C909C1021E5A3FB000ADB3E0 /* LambertMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LambertMaterial.swift; path = Materials/LambertMaterial.swift; sourceTree = "<group>"; };
+		C909C1041E5A3FF400ADB3E0 /* MetalMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetalMaterial.swift; path = Materials/MetalMaterial.swift; sourceTree = "<group>"; };
+		C909C1071E5A459A00ADB3E0 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		C909C1091E5A48A100ADB3E0 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		C909C10B1E5A4A1900ADB3E0 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = Objects/Scene.swift; sourceTree = "<group>"; };
+		C94447DB1E5A5DB200AFFB6A /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Channel.swift; path = Threading/Channel.swift; sourceTree = "<group>"; };
+		C94447DC1E5A5DB200AFFB6A /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = Threading/Queue.swift; sourceTree = "<group>"; };
+		C94447DD1E5A5DB200AFFB6A /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Routine.swift; path = Threading/Routine.swift; sourceTree = "<group>"; };
 		C95650C91E591DCF00A62793 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		C97202BD1E5A24E30036A5C0 /* Texture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
+		C97202BD1E5A24E30036A5C0 /* Texture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Texture.swift; path = Materials/Texture.swift; sourceTree = "<group>"; };
 		C97227D61E592A90006FA164 /* Ray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
 		C97227DA1E592D7A006FA164 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		C97227DC1E597001006FA164 /* Sphere.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
-		C97227DE1E597097006FA164 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
-		C97227E01E59787C006FA164 /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
+		C97227DC1E597001006FA164 /* Sphere.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sphere.swift; path = Objects/Sphere.swift; sourceTree = "<group>"; };
+		C97227DE1E597097006FA164 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Object.swift; path = Objects/Object.swift; sourceTree = "<group>"; };
+		C97227E01E59787C006FA164 /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Material.swift; path = Materials/Material.swift; sourceTree = "<group>"; };
 		C97228121E597EB9006FA164 /* Mersenne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mersenne.swift; path = Squall/Sources/Mersenne.swift; sourceTree = SOURCE_ROOT; };
 		C97228131E597EB9006FA164 /* Squall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Squall.swift; path = Squall/Sources/Squall.swift; sourceTree = SOURCE_ROOT; };
 		C9C0660F1E57B7DC00CA2106 /* RayTrace */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RayTrace; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +83,16 @@
 			name = Materials;
 			sourceTree = "<group>";
 		};
+		C94447E11E5A5DB700AFFB6A /* Threading */ = {
+			isa = PBXGroup;
+			children = (
+				C94447DC1E5A5DB200AFFB6A /* Queue.swift */,
+				C94447DB1E5A5DB200AFFB6A /* Channel.swift */,
+				C94447DD1E5A5DB200AFFB6A /* Routine.swift */,
+			);
+			name = Threading;
+			sourceTree = "<group>";
+		};
 		C97228161E597EC3006FA164 /* Squall */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,7 @@
 			children = (
 				C97227DE1E597097006FA164 /* Object.swift */,
 				C97227DC1E597001006FA164 /* Sphere.swift */,
+				C909C10B1E5A4A1900ADB3E0 /* Scene.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -95,6 +118,7 @@
 				C9C066111E57B7DC00CA2106 /* RayTrace */,
 				C97228161E597EC3006FA164 /* Squall */,
 				C9C066101E57B7DC00CA2106 /* Products */,
+				C94447E11E5A5DB700AFFB6A /* Threading */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +136,8 @@
 				C9C066121E57B7DC00CA2106 /* main.swift */,
 				C909C1061E5A432A00ADB3E0 /* Materials */,
 				C97228171E598020006FA164 /* Objects */,
+				C909C1071E5A459A00ADB3E0 /* Camera.swift */,
+				C909C1091E5A48A100ADB3E0 /* Renderer.swift */,
 				C97227D61E592A90006FA164 /* Ray.swift */,
 				C95650C91E591DCF00A62793 /* Image.swift */,
 				C97227DA1E592D7A006FA164 /* Utilities.swift */,
@@ -179,7 +205,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C97227E11E59787C006FA164 /* Material.swift in Sources */,
+				C94447DE1E5A5DB200AFFB6A /* Channel.swift in Sources */,
 				C97202BE1E5A24E30036A5C0 /* Texture.swift in Sources */,
+				C909C10C1E5A4A1900ADB3E0 /* Scene.swift in Sources */,
+				C909C10A1E5A48A100ADB3E0 /* Renderer.swift in Sources */,
 				C97227DD1E597001006FA164 /* Sphere.swift in Sources */,
 				C9C066131E57B7DC00CA2106 /* main.swift in Sources */,
 				C95650CA1E591DCF00A62793 /* Image.swift in Sources */,
@@ -188,6 +217,9 @@
 				C97227DB1E592D7A006FA164 /* Utilities.swift in Sources */,
 				C909C1051E5A3FF400ADB3E0 /* MetalMaterial.swift in Sources */,
 				C97227DF1E597097006FA164 /* Object.swift in Sources */,
+				C909C1081E5A459A00ADB3E0 /* Camera.swift in Sources */,
+				C94447E01E5A5DB200AFFB6A /* Routine.swift in Sources */,
+				C94447DF1E5A5DB200AFFB6A /* Queue.swift in Sources */,
 				C97228141E597EB9006FA164 /* Mersenne.swift in Sources */,
 				C97227D71E592A90006FA164 /* Ray.swift in Sources */,
 			);
@@ -225,7 +257,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -240,7 +272,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Debug;
 		};
@@ -272,6 +304,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -281,6 +314,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
