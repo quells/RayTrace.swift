@@ -52,4 +52,16 @@ public class Group: Object {
         }
         return closest
     }
+    
+    override public func boundingBox(_ tmin: Float, _ tmax: Float) -> AABB? {
+        if members.count < 1 {
+            return nil
+        }
+        guard var box = members.first!.boundingBox(tmin, tmax) else { return nil }
+        for i in 1 ..< members.count {
+            guard let nextBox = members[i].boundingBox(tmin, tmax) else { return nil }
+            box = combine(a: box, b: nextBox)
+        }
+        return box
+    }
 }

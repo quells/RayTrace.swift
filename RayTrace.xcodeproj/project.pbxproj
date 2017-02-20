@@ -26,6 +26,8 @@
 		C97228151E597EB9006FA164 /* Squall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97228131E597EB9006FA164 /* Squall.swift */; };
 		C9C066131E57B7DC00CA2106 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C066121E57B7DC00CA2106 /* main.swift */; };
 		C9F4A3CA1E5AAC0A00F3E835 /* GlassMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4A3C91E5AAC0A00F3E835 /* GlassMaterial.swift */; };
+		C9F4A3CC1E5ABF4100F3E835 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4A3CB1E5ABF4100F3E835 /* BoundingBox.swift */; };
+		C9F4A3CE1E5AC3F300F3E835 /* Scratchboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4A3CD1E5AC3F300F3E835 /* Scratchboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +63,8 @@
 		C9C0660F1E57B7DC00CA2106 /* RayTrace */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RayTrace; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C066121E57B7DC00CA2106 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C9F4A3C91E5AAC0A00F3E835 /* GlassMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlassMaterial.swift; path = Materials/GlassMaterial.swift; sourceTree = "<group>"; };
+		C9F4A3CB1E5ABF4100F3E835 /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoundingBox.swift; path = Objects/BoundingBox.swift; sourceTree = "<group>"; };
+		C9F4A3CD1E5AC3F300F3E835 /* Scratchboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scratchboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 				C97227DE1E597097006FA164 /* Object.swift */,
 				C97227DC1E597001006FA164 /* Sphere.swift */,
 				C909C10B1E5A4A1900ADB3E0 /* Scene.swift */,
+				C9F4A3CB1E5ABF4100F3E835 /* BoundingBox.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				C9C066121E57B7DC00CA2106 /* main.swift */,
+				C9F4A3CD1E5AC3F300F3E835 /* Scratchboard.swift */,
 				C909C1061E5A432A00ADB3E0 /* Materials */,
 				C97228171E598020006FA164 /* Objects */,
 				C909C1071E5A459A00ADB3E0 /* Camera.swift */,
@@ -207,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9F4A3CE1E5AC3F300F3E835 /* Scratchboard.swift in Sources */,
 				C97227E11E59787C006FA164 /* Material.swift in Sources */,
 				C94447DE1E5A5DB200AFFB6A /* Channel.swift in Sources */,
 				C97202BE1E5A24E30036A5C0 /* Texture.swift in Sources */,
@@ -222,6 +229,7 @@
 				C97227DF1E597097006FA164 /* Object.swift in Sources */,
 				C909C1081E5A459A00ADB3E0 /* Camera.swift in Sources */,
 				C94447E01E5A5DB200AFFB6A /* Routine.swift in Sources */,
+				C9F4A3CC1E5ABF4100F3E835 /* BoundingBox.swift in Sources */,
 				C94447DF1E5A5DB200AFFB6A /* Queue.swift in Sources */,
 				C9F4A3CA1E5AAC0A00F3E835 /* GlassMaterial.swift in Sources */,
 				C97228141E597EB9006FA164 /* Mersenne.swift in Sources */,

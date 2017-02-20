@@ -48,4 +48,9 @@ public class Sphere: Object {
         }
         return nil
     }
+    
+    override public func boundingBox(_ tmin: Float, _ tmax: Float) -> AABB? {
+        let R = float3(radius, radius, radius)
+        return AABB(min: center - R, max: center + R)
+    }
 }
