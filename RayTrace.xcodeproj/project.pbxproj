@@ -83,11 +83,11 @@
 		C909C1061E5A432A00ADB3E0 /* Materials */ = {
 			isa = PBXGroup;
 			children = (
+				C97227E01E59787C006FA164 /* Material.swift */,
+				C97202BD1E5A24E30036A5C0 /* Texture.swift */,
 				C909C1021E5A3FB000ADB3E0 /* LambertMaterial.swift */,
 				C909C1041E5A3FF400ADB3E0 /* MetalMaterial.swift */,
 				C9F4A3C91E5AAC0A00F3E835 /* GlassMaterial.swift */,
-				C97227E01E59787C006FA164 /* Material.swift */,
-				C97202BD1E5A24E30036A5C0 /* Texture.swift */,
 			);
 			name = Materials;
 			sourceTree = "<group>";

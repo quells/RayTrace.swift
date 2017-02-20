@@ -13,7 +13,7 @@ public class GlassMaterial: MaterialShader {
         self.init(albedo: ConstantTexture(r: r, g: g, b: b), IOR: IOR)
     }
     
-    override func scatter(r: Ray, h: HitRecord) -> ScatterResult {
+    override func scatter(r: Ray, h: HitRecord) -> ScatterResult? {
         let reflectedDir = reflect(v: r.direction, n: h.Normal)
         let att = albedo.colorFor(u: 0, v: 0, p: h.P)
         let outwardNormal: float3
@@ -41,6 +41,6 @@ public class GlassMaterial: MaterialShader {
         } else {
             scatteredRay = Ray(origin: h.P, direction: refractDirection)
         }
-        return ScatterResult(didScatter: true, attenuation: att, scattered: scatteredRay)
+        return ScatterResult(attenuation: att, scattered: scatteredRay)
     }
 }
