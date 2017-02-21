@@ -1,37 +1,37 @@
 import Foundation
 import simd
 
-func TestScene(width: Int, height: Int) {
-//    let diffuseGreen = LambertMaterial(r: 0.1, g: 0.8, b: 0.2)
-    let diffuseNorm = NormLambertMaterial()
-    let metallicGold = MetalMaterial(r: 0.8, g: 0.6, b: 0.2, roughness: 0.1)
-    let greenGlass = GlassMaterial(r: 0.8, g: 1.0, b: 0.8, IOR: 1.5)
-    let constantWhite = ConstantTexture(r: 1, g: 1, b: 1)
-    let constantBlack = ConstantTexture(r: 0, g: 0, b: 0)
-    let checkered = LambertMaterial(albedo: CheckeredTexture(even: constantWhite, odd: constantBlack))
+func TestCornell(width: Int, height: Int) {
+    let red   = LambertMaterial(r: 0.65, g: 0.05, b: 0.05)
+    let white = LambertMaterial(r: 0.75, g: 0.75, b: 0.75)
+    let green = LambertMaterial(r: 0.12, g: 0.45, b: 0.15)
+    let light = DiffuseLight(white: 15)
     
-    let left = Sphere(center: float3(-0.6, 0, 0), radius: 0.5, shader: greenGlass)
-    let middle = Sphere(center: float3(0.6, 0, 0), radius: 0.5, shader: diffuseNorm)
-//    let right = Sphere(center: float3(1.02, 0, 0), radius: 0.5, shader: metallicGold)
-    let right = Rectangle(p: float3(-1,-0.5,-1.5), width: 2, height: 1.5, shader: metallicGold)
-    let ground = Sphere(center: float3(0, -100.5, 0), radius: 100, shader: checkered)
-//    let objects = Group(members: [left, middle, right, ground])
-    let objects = AABBNode(objects: [left, middle, right, ground])
+//    let temp = Sphere(center: float3(278, 555, 278), radius: 65, shader: light)
+    let a = RotateY(Rectangle(p: float3(-555, 0, 555), width: 555, height: 555, shader: red), angle: -90)
+    let b = RotateY(Rectangle(p: float3(0, 0, 0), width: 555, height: 555, shader: green), angle: 90)
+    let c = RotateX(Rectangle(p: float3(0, 0, 0), width: 555, height: 555, shader: white), angle: 90)
+    let d = RotateX(Rectangle(p: float3(0, -555, 555), width: 555, height: 555, shader: white), angle: -90)
+    let e = Rectangle(p: float3(0, 0, 555), width: 555, height: 555, shader: white)
+    let f = RotateX(Rectangle(p: float3(210, -350, 554.9), width: 140, height: 140, shader: light), angle: -90)
+//    let g = FlipNormals(Rectangle(p: float3(0, 0, 0), width: 555, height: 555, shader: white))
     
-    let sky = TwoColorSky(center: float3(1, 1, 1), edges: float3(0.5, 0.7, 1))
+    let objects = Group(members: [a, b, c, d, e, f])
+    
+    let sky = OneColorSky(color: float3())
     let world = World(objects: objects, sky: sky)
     
-    let camera = Camera(lookfrom: float3(0, 0, 4), lookat: float3(), vup: float3(0, 1, 0), vfov: 35, width: width, height: height)
-    let renderer = Renderer(camera: camera)
+    let camera = Camera(lookfrom: float3(278, 278, -800), lookat: float3(278, 278, 0), vup: float3(0, 1, 0), vfov: 36, width: width, height: height)
+    let renderer = Renderer(far: 1000000, camera: camera)
     
-    let image = renderer.render(scene: world, samples: 100)
+    let image = renderer.render(scene: world, samples: 1024)
     image.exportToDesktop()
 }
 
 Squall.seed()
 
 let start = Date()
-TestScene(width: 400, height: 300)
+TestCornell(width: 100, height: 100)
 let duration = -start.timeIntervalSinceNow
 
 print(Squall.count, duration)
