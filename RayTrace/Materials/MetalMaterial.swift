@@ -13,10 +13,10 @@ public class MetalMaterial: MaterialShader {
         self.init(albedo: ConstantTexture(r: r, g: g, b: b), roughness: roughness)
     }
     
-    override func scatter(r: Ray, h: HitRecord) -> ScatterResult? {
+    override func scatter(r: Ray, h: HitRecord, rand: Gust) -> ScatterResult? {
         var reflection = reflect(v: normalize(r.direction), n: h.Normal)
         if roughness > 0 {
-            reflection += roughness*Ray.RandomSphere().direction
+            reflection += roughness*Ray.RandomSphere(rand: rand).direction
             reflection = normalize(reflection)
         }
         let reflected = Ray(origin: h.P, direction: reflection)

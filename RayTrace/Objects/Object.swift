@@ -17,8 +17,8 @@ public struct HitRecord {
         self.Material = Material
     }
     
-    public func scatter(r: Ray) -> ScatterResult? {
-        return Material.scatter(r: r, h: self)
+    public func scatter(r: Ray, rand: Gust) -> ScatterResult? {
+        return Material.scatter(r: r, h: self, rand: rand)
     }
 }
 
@@ -63,5 +63,19 @@ public class Group: Object {
             box = combine(a: box, b: nextBox)
         }
         return box
+    }
+}
+
+public class FlipNormals: Object {
+    var child: Object
+    
+    init(_ child: Object) {
+        self.child = child
+    }
+    
+    override public func hit(r: Ray, near: Float, far: Float) -> HitRecord? {
+        guard var record = child.hit(r: r, near: near, far: far) else { return nil }
+        record.Normal *= -1
+        return record
     }
 }

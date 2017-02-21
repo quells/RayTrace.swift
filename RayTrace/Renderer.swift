@@ -11,8 +11,8 @@ public class Renderer {
         (self.near, self.far, self.maxBounces) = (near, far, maxBounces)
         self.camera = camera
         self.routines = []
-        for _ in 0 ..< numWorkers {
-            self.routines.append(Routine())
+        for i in 0 ..< numWorkers {
+            self.routines.append(Routine(i))
         }
     }
     
@@ -29,9 +29,9 @@ public class Renderer {
         }
         
         for r in routines {
-            r.doUntil(done) {
+            r.doUntil(done) { g in
                 let y = todo.get()
-                let line = self.renderLine(scene: scene, y: height-y, samples: samples)
+                let line = self.renderLine(scene: scene, y: height-y, samples: samples, rand: g)
                 completed.add((y, line))
             }
         }
@@ -49,7 +49,7 @@ public class Renderer {
         return Image(width: width, height: height, pixels: pixels)
     }
     
-    func renderLine(scene: Scene, y Y: Int, samples: Int) -> [float3] {
+    func renderLine(scene: Scene, y Y: Int, samples: Int, rand: Gust) -> [float3] {
         let (width, height) = (camera.imageWidth, camera.imageHeight)
         let (iw, ih) = (1.0/Float(width), 1.0/Float(height))
         let iS = 1.0/Float(samples)
@@ -58,10 +58,10 @@ public class Renderer {
         for i in 0 ..< width {
              let x = Float(i)
             for _ in 0 ..< samples {
-                let u = (x + Squall.uniform())*iw
-                let v = (y + Squall.uniform())*ih
+                let u = (x + rand.uniform())*iw
+                let v = (y + rand.uniform())*ih
                 let r = camera.getRay(u: u, v: v)
-                pixelRow[i] += scene.getColor(r: r, near: near, far: far, bounces: maxBounces)
+                pixelRow[i] += scene.getColor(r: r, near: near, far: far, bounces: maxBounces, rand: rand)
             }
         }
         return pixelRow.map { $0 * iS }

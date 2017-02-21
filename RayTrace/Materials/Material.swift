@@ -6,7 +6,7 @@ public struct ScatterResult {
 }
 
 public class MaterialShader {
-    func scatter(r: Ray, h: HitRecord) -> ScatterResult? {
+    func scatter(r: Ray, h: HitRecord, rand: Gust) -> ScatterResult? {
         return nil
     }
 }
@@ -20,11 +20,11 @@ public class MixedMaterial: MaterialShader {
         (self.a, self.b, self.t) = (a, b, ratio)
     }
     
-    override func scatter(r: Ray, h: HitRecord) -> ScatterResult? {
-        if Squall.uniform() < t {
-            return a.scatter(r: r, h: h)
+    override func scatter(r: Ray, h: HitRecord, rand: Gust) -> ScatterResult? {
+        if rand.uniform() < t {
+            return a.scatter(r: r, h: h, rand: rand)
         }
-        return b.scatter(r: r, h: h)
+        return b.scatter(r: r, h: h, rand: rand)
     }
 }
 
@@ -37,11 +37,11 @@ public class CheckeredMaterial: MaterialShader {
         (self.even, self.odd, self.scale) = (even, odd, scale)
     }
     
-    override func scatter(r: Ray, h: HitRecord) -> ScatterResult? {
+    override func scatter(r: Ray, h: HitRecord, rand: Gust) -> ScatterResult? {
         let sines = sin(scale*h.P.x) * sin(scale*h.P.y) * sin(scale*h.P.z)
         if sines > 0 {
-            return even.scatter(r: r, h: h)
+            return even.scatter(r: r, h: h, rand: rand)
         }
-        return odd.scatter(r: r, h: h)
+        return odd.scatter(r: r, h: h, rand: rand)
     }
 }

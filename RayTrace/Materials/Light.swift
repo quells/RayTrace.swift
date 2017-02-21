@@ -1,7 +1,7 @@
 import simd
 
 public class LightShader: MaterialShader {
-    override func scatter(r: Ray, h: HitRecord) -> ScatterResult? {
+    override func scatter(r: Ray, h: HitRecord, rand: Gust) -> ScatterResult? {
         return nil
     }
     
@@ -19,6 +19,10 @@ public class DiffuseLight: LightShader {
     
     convenience init(r: Float, g: Float, b: Float) {
         self.init(emit: ConstantTexture(r: r, g: g, b: b))
+    }
+    
+    convenience init(white w: Float) {
+        self.init(emit: ConstantTexture(float3(w, w, w)))
     }
     
     override func emit(u: Float, v: Float, p: float3) -> float3 {

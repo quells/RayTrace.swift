@@ -13,7 +13,7 @@ public class GlassMaterial: MaterialShader {
         self.init(albedo: ConstantTexture(r: r, g: g, b: b), IOR: IOR)
     }
     
-    override func scatter(r: Ray, h: HitRecord) -> ScatterResult? {
+    override func scatter(r: Ray, h: HitRecord, rand: Gust) -> ScatterResult? {
         let reflectedDir = reflect(v: r.direction, n: h.Normal)
         let att = albedo.colorFor(u: 0, v: 0, p: h.P)
         let outwardNormal: float3
@@ -36,7 +36,7 @@ public class GlassMaterial: MaterialShader {
             reflectProb = 1
         }
         var scatteredRay: Ray
-        if Squall.uniform() < reflectProb {
+        if rand.uniform() < reflectProb {
             scatteredRay = Ray(origin: h.P, direction: reflectedDir)
         } else {
             scatteredRay = Ray(origin: h.P, direction: refractDirection)
@@ -57,10 +57,10 @@ public class FrostedGlassMaterial: GlassMaterial {
         self.init(albedo: ConstantTexture(float3(1, 1, 1)), IOR: IOR, roughness: roughness)
     }
     
-    override func scatter(r: Ray, h: HitRecord) -> ScatterResult? {
-        guard var scattered = super.scatter(r: r, h: h) else { return nil }
+    override func scatter(r: Ray, h: HitRecord, rand: Gust) -> ScatterResult? {
+        guard var scattered = super.scatter(r: r, h: h, rand: rand) else { return nil }
         var r = scattered.scattered.direction
-        r += roughness*Ray.RandomSphere().direction
+        r += roughness*Ray.RandomSphere(rand: rand).direction
         scattered.scattered.direction = normalize(r)
         return ScatterResult(attenuation: scattered.attenuation, scattered: scattered.scattered)
     }

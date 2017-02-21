@@ -15,8 +15,8 @@ public class LambertMaterial: MaterialShader {
         self.init(albedo: ConstantTexture(r: r, g: g, b: b))
     }
     
-    override func scatter(r: Ray, h: HitRecord) -> ScatterResult? {
-        let scattered = Ray.RandomSphere(around: h.P)
+    override func scatter(r: Ray, h: HitRecord, rand: Gust) -> ScatterResult? {
+        let scattered = Ray.RandomSphere(around: h.P, rand: rand)
         let att = albedo.colorFor(u: 0, v: 0, p: h.P)
         return ScatterResult(attenuation: att, scattered: scattered)
     }
@@ -27,8 +27,8 @@ public class NormLambertMaterial: LambertMaterial {
         super.init(albedo: Texture())
     }
     
-    override func scatter(r: Ray, h: HitRecord) -> ScatterResult? {
-        guard var result = super.scatter(r: r, h: h) else { return nil }
+    override func scatter(r: Ray, h: HitRecord, rand: Gust) -> ScatterResult? {
+        guard var result = super.scatter(r: r, h: h, rand: rand) else { return nil }
         result.attenuation = 0.5 * (h.Normal + float3(1, 1, 1))
         return result
     }
