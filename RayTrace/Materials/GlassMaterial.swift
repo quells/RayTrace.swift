@@ -44,3 +44,24 @@ public class GlassMaterial: MaterialShader {
         return ScatterResult(attenuation: att, scattered: scatteredRay)
     }
 }
+
+public class FrostedGlassMaterial: GlassMaterial {
+    var roughness: Float
+    
+    init(albedo: Texture, IOR: Float, roughness: Float) {
+        self.roughness = roughness
+        super.init(albedo: albedo, IOR: IOR)
+    }
+    
+    convenience init(IOR: Float, roughness: Float) {
+        self.init(albedo: ConstantTexture(float3(1, 1, 1)), IOR: IOR, roughness: roughness)
+    }
+    
+    override func scatter(r: Ray, h: HitRecord) -> ScatterResult? {
+        guard var scattered = super.scatter(r: r, h: h) else { return nil }
+        var r = scattered.scattered.direction
+        r += roughness*Ray.RandomSphere().direction
+        scattered.scattered.direction = normalize(r)
+        return ScatterResult(attenuation: scattered.attenuation, scattered: scattered.scattered)
+    }
+}
