@@ -3,10 +3,12 @@ import Foundation
 
 public class Routine {
     private var queue: DispatchQueue
+    private var rand: Gust
     
-    public init() {
+    public init(_ offset: Int) {
         let id = UUID().uuidString
         self.queue = DispatchQueue(label: id, qos: .background)
+        self.rand = Gust(offset: UInt32(offset))
     }
     
     public func doOnce(block: @escaping () -> Void) {
@@ -15,13 +17,13 @@ public class Routine {
         }
     }
     
-    public func doUntil(_ done: Channel<Bool>, block: @escaping () -> Void) {
+    public func doUntil(_ done: Channel<Bool>, block: @escaping (_ g: Gust) -> Void) {
         self.queue.async {
             while true {
                 if done.hasValues() {
                     break
                 }
-                block()
+                block(self.rand)
             }
         }
     }
