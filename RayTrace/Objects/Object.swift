@@ -17,7 +17,7 @@ public struct HitRecord {
         self.Material = Material
     }
     
-    public func scatter(r: Ray) -> ScatterResult {
+    public func scatter(r: Ray) -> ScatterResult? {
         return Material.scatter(r: r, h: self)
     }
 }

@@ -27,4 +27,3 @@ public class MixedMaterial: MaterialShader {
         return b.scatter(r: r, h: h)
     }
 }
-

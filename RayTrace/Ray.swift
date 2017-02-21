@@ -2,8 +2,8 @@ import Foundation
 import simd
 
 public struct Ray {
-    public let origin: float3
-    public let direction: float3
+    public var origin: float3
+    public var direction: float3
     
     public init(origin: float3, direction: float3) {
         self.origin = origin

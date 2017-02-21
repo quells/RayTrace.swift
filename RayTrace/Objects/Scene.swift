@@ -37,8 +37,11 @@ public class World: Scene {
     
     override func getColor(r: Ray, near: Float, far: Float, bounces: Int) -> float3 {
         if let record = objects.hit(r: r, near: near, far: far) {
-            let result = record.scatter(r: r)
-            if result.didScatter && bounces > 0 {
+            if record.Material is LightShader {
+                let light = record.Material as! LightShader
+                return light.emit(u: record.u, v: record.v, p: record.P)
+            }
+            if let result = record.scatter(r: r), bounces > 0 {
                 let color = getColor(r: result.scattered, near: near, far: far-record.T, bounces: bounces-1)
                 return result.attenuation * color
             }
