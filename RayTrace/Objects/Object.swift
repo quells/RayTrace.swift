@@ -66,6 +66,23 @@ public class Group: Object {
     }
 }
 
+public class Translate: Object {
+    var child: Object
+    var offset: float3
+    
+    init(_ child: Object, offset: float3) {
+        (self.child, self.offset) = (child, offset)
+    }
+    
+    override public func hit(r: Ray, near: Float, far: Float) -> HitRecord? {
+        var tr = r
+        tr.origin += offset
+        guard var record = child.hit(r: tr, near: near, far: far) else { return nil }
+        record.P -= offset
+        return record
+    }
+}
+
 public class FlipNormals: Object {
     var child: Object
     
