@@ -12,6 +12,18 @@ public class SkyShader {
     }
 }
 
+public class OneColorSky: SkyShader {
+    var color: float3
+    
+    init(color: float3) {
+        self.color = color
+    }
+    
+    override func color(for r: Ray) -> float3 {
+        return color
+    }
+}
+
 public class TwoColorSky: SkyShader {
     var center: float3
     var edges: float3
