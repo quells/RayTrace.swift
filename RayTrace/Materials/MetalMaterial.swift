@@ -17,6 +17,7 @@ public class MetalMaterial: MaterialShader {
         var reflection = reflect(v: normalize(r.direction), n: h.Normal)
         if roughness > 0 {
             reflection += roughness*Ray.RandomSphere().direction
+            reflection = normalize(reflection)
         }
         let reflected = Ray(origin: h.P, direction: reflection)
         let att = albedo.colorFor(u: 0, v: 0, p: h.P)
