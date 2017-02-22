@@ -26,6 +26,7 @@
 		C97228141E597EB9006FA164 /* Mersenne.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97228121E597EB9006FA164 /* Mersenne.swift */; };
 		C97228151E597EB9006FA164 /* Squall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97228131E597EB9006FA164 /* Squall.swift */; };
 		C9C066131E57B7DC00CA2106 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C066121E57B7DC00CA2106 /* main.swift */; };
+		C9ED55AF1E5CCCFE0083DE98 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED55AE1E5CCCFE0083DE98 /* Box.swift */; };
 		C9F4A3CA1E5AAC0A00F3E835 /* GlassMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4A3C91E5AAC0A00F3E835 /* GlassMaterial.swift */; };
 		C9F4A3CC1E5ABF4100F3E835 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4A3CB1E5ABF4100F3E835 /* BoundingBox.swift */; };
 		C9F4A3CE1E5AC3F300F3E835 /* Scratchboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4A3CD1E5AC3F300F3E835 /* Scratchboard.swift */; };
@@ -66,6 +67,7 @@
 		C97228131E597EB9006FA164 /* Squall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Squall.swift; path = Squall/Sources/Squall.swift; sourceTree = SOURCE_ROOT; };
 		C9C0660F1E57B7DC00CA2106 /* RayTrace */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RayTrace; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C066121E57B7DC00CA2106 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		C9ED55AE1E5CCCFE0083DE98 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Objects/Box.swift; sourceTree = "<group>"; };
 		C9F4A3C91E5AAC0A00F3E835 /* GlassMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlassMaterial.swift; path = Materials/GlassMaterial.swift; sourceTree = "<group>"; };
 		C9F4A3CB1E5ABF4100F3E835 /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoundingBox.swift; path = Objects/BoundingBox.swift; sourceTree = "<group>"; };
 		C9F4A3CD1E5AC3F300F3E835 /* Scratchboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scratchboard.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				C9F4A3CF1E5ACA1D00F3E835 /* Rectangle.swift */,
 				C909C10B1E5A4A1900ADB3E0 /* Scene.swift */,
 				C926ADD51E5BFF4E0072299F /* Rotate.swift */,
+				C9ED55AE1E5CCCFE0083DE98 /* Box.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				C909C1031E5A3FB000ADB3E0 /* LambertMaterial.swift in Sources */,
 				C97227DB1E592D7A006FA164 /* Utilities.swift in Sources */,
 				C909C1051E5A3FF400ADB3E0 /* MetalMaterial.swift in Sources */,
+				C9ED55AF1E5CCCFE0083DE98 /* Box.swift in Sources */,
 				C9F4A3D01E5ACA1D00F3E835 /* Rectangle.swift in Sources */,
 				C97227DF1E597097006FA164 /* Object.swift in Sources */,
 				C909C1081E5A459A00ADB3E0 /* Camera.swift in Sources */,
