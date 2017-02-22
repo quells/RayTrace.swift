@@ -29,14 +29,14 @@ func TestCornell(width: Int, height: Int) {
     let camera = Camera(lookfrom: lookfrom, lookat: lookat, vup: float3(0, 1, 0), vfov: 37, width: width, height: height)
     let renderer = Renderer(far: 1000000, camera: camera)
     
-    let image = renderer.render(scene: world, samples: 1024*16)
+    let image = renderer.render(scene: world, samples: 1024*32)
     image.exportToDesktop()
 }
 
 Squall.seed()
 
 let start = Date()
-TestCornell(width: 800, height: 800)
+TestCornell(width: 400, height: 400)
 let duration = -start.timeIntervalSinceNow
 
 print(duration)
