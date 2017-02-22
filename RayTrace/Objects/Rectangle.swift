@@ -10,7 +10,7 @@ public class Rectangle: Object {
         self.shader = shader
     }
     
-    override public func hit(r: Ray, near: Float, far: Float) -> HitRecord? {
+    override public func hit(r: Ray, near: Float, far: Float, rand: Gust) -> HitRecord? {
         let t = (k - r.origin.z) / r.direction.z
         if t < near || t > far {
             return nil

@@ -13,8 +13,8 @@ public class Box: Object {
         self.faces = Group(members: [front, back, a, b, top, bottom])
     }
     
-    override public func hit(r: Ray, near: Float, far: Float) -> HitRecord? {
-        return faces.hit(r: r, near: near, far: far)
+    override public func hit(r: Ray, near: Float, far: Float, rand: Gust) -> HitRecord? {
+        return faces.hit(r: r, near: near, far: far, rand: rand)
     }
     
     override public func boundingBox(_ tmin: Float, _ tmax: Float) -> AABB? {

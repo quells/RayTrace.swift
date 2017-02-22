@@ -12,6 +12,7 @@
 		C909C1081E5A459A00ADB3E0 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C1071E5A459A00ADB3E0 /* Camera.swift */; };
 		C909C10A1E5A48A100ADB3E0 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C1091E5A48A100ADB3E0 /* Renderer.swift */; };
 		C909C10C1E5A4A1900ADB3E0 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C10B1E5A4A1900ADB3E0 /* Scene.swift */; };
+		C910057F1E5D604C00D48E87 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910057E1E5D604C00D48E87 /* Volume.swift */; };
 		C926ADD61E5BFF4E0072299F /* Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C926ADD51E5BFF4E0072299F /* Rotate.swift */; };
 		C94447DE1E5A5DB200AFFB6A /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94447DB1E5A5DB200AFFB6A /* Channel.swift */; };
 		C94447DF1E5A5DB200AFFB6A /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94447DC1E5A5DB200AFFB6A /* Queue.swift */; };
@@ -52,6 +53,7 @@
 		C909C1071E5A459A00ADB3E0 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		C909C1091E5A48A100ADB3E0 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		C909C10B1E5A4A1900ADB3E0 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = Objects/Scene.swift; sourceTree = "<group>"; };
+		C910057E1E5D604C00D48E87 /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Volume.swift; path = Objects/Volume.swift; sourceTree = "<group>"; };
 		C926ADD51E5BFF4E0072299F /* Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rotate.swift; path = Objects/Rotate.swift; sourceTree = "<group>"; };
 		C94447DB1E5A5DB200AFFB6A /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Channel.swift; path = Threading/Channel.swift; sourceTree = "<group>"; };
 		C94447DC1E5A5DB200AFFB6A /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = Threading/Queue.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				C909C10B1E5A4A1900ADB3E0 /* Scene.swift */,
 				C926ADD51E5BFF4E0072299F /* Rotate.swift */,
 				C9ED55AE1E5CCCFE0083DE98 /* Box.swift */,
+				C910057E1E5D604C00D48E87 /* Volume.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				C909C10C1E5A4A1900ADB3E0 /* Scene.swift in Sources */,
 				C9F4A3D21E5B456600F3E835 /* Light.swift in Sources */,
 				C909C10A1E5A48A100ADB3E0 /* Renderer.swift in Sources */,
+				C910057F1E5D604C00D48E87 /* Volume.swift in Sources */,
 				C97227DD1E597001006FA164 /* Sphere.swift in Sources */,
 				C9C066131E57B7DC00CA2106 /* main.swift in Sources */,
 				C95650CA1E591DCF00A62793 /* Image.swift in Sources */,

@@ -10,11 +10,11 @@ public class Rotate: Object {
         (self.child, self.fwd, self.rev) = (child, fwd, rev)
     }
     
-    override public func hit(r: Ray, near: Float, far: Float) -> HitRecord? {
+    override public func hit(r: Ray, near: Float, far: Float, rand: Gust) -> HitRecord? {
         var rr = r
         rr.origin = matrix_multiply(fwd, r.origin) as float3
         rr.direction = matrix_multiply(fwd, r.direction) as float3
-        if var record = child.hit(r: rr, near: near, far: far) {
+        if var record = child.hit(r: rr, near: near, far: far, rand: rand) {
             record.P = matrix_multiply(rev, record.P) as float3
             record.Normal = matrix_multiply(rev, record.Normal) as float3
             return record

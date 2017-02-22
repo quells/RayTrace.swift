@@ -88,11 +88,11 @@ public class AABBNode: Object {
         self.right = right
     }
     
-    override public func hit(r: Ray, near: Float, far: Float) -> HitRecord? {
+    override public func hit(r: Ray, near: Float, far: Float, rand: Gust) -> HitRecord? {
         let (didHit, near, far) = bb.hit(r: r, tmin: near, tmax: far)
         if didHit {
-            let leftRecord = left.hit(r: r, near: near, far: far)
-            let rightRecord = right.hit(r: r, near: near, far: far)
+            let leftRecord = left.hit(r: r, near: near, far: far, rand: rand)
+            let rightRecord = right.hit(r: r, near: near, far: far, rand: rand)
             if leftRecord != nil && rightRecord != nil {
                 return (leftRecord!.T < rightRecord!.T) ? leftRecord : rightRecord
             }

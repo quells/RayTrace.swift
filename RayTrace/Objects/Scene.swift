@@ -48,7 +48,7 @@ public class World: Scene {
     }
     
     override func getColor(r: Ray, near: Float, far: Float, bounces: Int, rand: Gust) -> float3 {
-        if let record = objects.hit(r: r, near: near, far: far) {
+        if let record = objects.hit(r: r, near: near, far: far, rand: rand) {
             if record.Material is LightShader {
                 let light = record.Material as! LightShader
                 return light.emit(u: record.u, v: record.v, p: record.P)

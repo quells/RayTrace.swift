@@ -27,7 +27,7 @@ public class Sphere: Object {
         return (u, v)
     }
     
-    override public func hit(r: Ray, near: Float, far: Float) -> HitRecord? {
+    override public func hit(r: Ray, near: Float, far: Float, rand: Gust) -> HitRecord? {
         let oc = r.origin - center
         let a = length_squared(r.direction)
         let b = dot(oc, r.direction)

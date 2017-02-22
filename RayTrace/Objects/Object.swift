@@ -23,7 +23,7 @@ public struct HitRecord {
 }
 
 public class Object {
-    public func hit(r: Ray, near: Float, far: Float) -> HitRecord? {
+    public func hit(r: Ray, near: Float, far: Float, rand: Gust) -> HitRecord? {
         return nil
     }
     
@@ -39,11 +39,11 @@ public class Group: Object {
         self.members = members
     }
     
-    override public func hit(r: Ray, near: Float, far: Float) -> HitRecord? {
+    override public func hit(r: Ray, near: Float, far: Float, rand: Gust) -> HitRecord? {
         var closestT = far
         var closest: HitRecord? = nil
         for m in members {
-            if let record = m.hit(r: r, near: near, far: far) {
+            if let record = m.hit(r: r, near: near, far: far, rand: rand) {
                 if record.T < closestT {
                     closestT = record.T
                     closest = record
@@ -74,10 +74,10 @@ public class Translate: Object {
         (self.child, self.offset) = (child, offset)
     }
     
-    override public func hit(r: Ray, near: Float, far: Float) -> HitRecord? {
+    override public func hit(r: Ray, near: Float, far: Float, rand: Gust) -> HitRecord? {
         var tr = r
         tr.origin += offset
-        guard var record = child.hit(r: tr, near: near, far: far) else { return nil }
+        guard var record = child.hit(r: tr, near: near, far: far, rand: rand) else { return nil }
         record.P -= offset
         return record
     }
@@ -90,8 +90,8 @@ public class FlipNormals: Object {
         self.child = child
     }
     
-    override public func hit(r: Ray, near: Float, far: Float) -> HitRecord? {
-        guard var record = child.hit(r: r, near: near, far: far) else { return nil }
+    override public func hit(r: Ray, near: Float, far: Float, rand: Gust) -> HitRecord? {
+        guard var record = child.hit(r: r, near: near, far: far, rand: rand) else { return nil }
         record.Normal *= -1
         return record
     }

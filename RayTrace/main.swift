@@ -15,8 +15,9 @@ func TestCornell(width: Int, height: Int) {
     let f = Translate(RotateX(Rectangle(width: 255, height: 255, k: 0, shader: light), angle: 90), offset: float3(-150, -554.5, -150))
     let tall = Translate(RotateY(Box(width: 160, height: 380, depth: 160, shader: white), angle: -25), offset: float3(-300, 1, -260))
     let short = Translate(RotateY(Box(width: 140, height: 140, depth: 140, shader: white), angle: 40), offset: float3(-200, 1, -60))
+    let smoke = ConstantVolume(boundary: Box(width: 555, height: 120, depth: 555, shader: MaterialShader()), density: 0.004, shader: white)
     
-    let objects = Group(members: [a, b, c, d, e, f, tall, short])
+    let objects = Group(members: [a, b, c, d, e, f, tall, short, smoke])
     
     let sky = OneColorSky(color: float3())
     let world = World(objects: objects, sky: sky)
@@ -28,14 +29,14 @@ func TestCornell(width: Int, height: Int) {
     let camera = Camera(lookfrom: lookfrom, lookat: lookat, vup: float3(0, 1, 0), vfov: 37, width: width, height: height)
     let renderer = Renderer(far: 1000000, camera: camera)
     
-    let image = renderer.render(scene: world, samples: 256)
+    let image = renderer.render(scene: world, samples: 1024*16)
     image.exportToDesktop()
 }
 
 Squall.seed()
 
 let start = Date()
-TestCornell(width: 100, height: 100)
+TestCornell(width: 800, height: 800)
 let duration = -start.timeIntervalSinceNow
 
 print(duration)
